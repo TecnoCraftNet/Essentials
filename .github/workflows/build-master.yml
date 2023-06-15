@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build and upload
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout Git repo
@@ -75,7 +75,7 @@ jobs:
     name: Publish Javadocs
     needs: build
     if: ${{ github.event_name == 'push' && github.repository == 'EssentialsX/Essentials' && github.ref == 'refs/heads/2.x' }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Setup Node
